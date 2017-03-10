@@ -17,10 +17,11 @@ var PersonSokService = (function () {
     }
     // må endre url
     PersonSokService.prototype.sok = function (term) {
-        alert("Søker etter person");
         //return this.http.get(`api/personer/?navn=${term}`)
-        var url = "http://localhost:999/api.scibot/v1/person/?navn=";
-        return this.http.get("" + url + term)
+        //const url = `http://localhost:9999/api.scibot/v1/person/?navn=`;
+        //return this.http.get(`${url}${term}`)
+        return this.http
+            .get("app/personer/?navn=" + term)
             .map(function (response) { return response.json().data; });
     };
     PersonSokService = __decorate([

@@ -12,6 +12,7 @@ import 'rxjs/add/operator/switchMap';
 
 import { Person } from "./person";
 import { PersonSokService } from "./person-sok.service";
+import { INSTITUSJONER } from "./INSTITUSJONER";
 
 @Component({
     moduleId: module.id,
@@ -21,14 +22,17 @@ import { PersonSokService } from "./person-sok.service";
         "bootstrap.min.css",
         "font-awesome.min.css",
         "forsideCSS.css",
+        "person-sok.css",
         "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" 
     ],
     providers: [PersonSokService]
 })
 export class AppComponent implements OnInit {
     title = 'SaiBått';
+    undertittel = "Søk etter person eller institusjon";
     private sokeOrd = new Subject<string>();
     personer: Observable<Person[]>;
+    institusjoner = INSTITUSJONER;
 
     constructor(
         private personSokService: PersonSokService,
@@ -52,10 +56,10 @@ export class AppComponent implements OnInit {
     }
 
     hent(term: string): void {
-        this.searchTerms.next(term);
+        this.sokeOrd.next(term);
     }
 
-    hentPerson(): void {
+    personDetaljer(person: Person): void {
         alert("Hent person");
     }
 
@@ -63,12 +67,19 @@ export class AppComponent implements OnInit {
         //window.location="http://localhost:9999/prototype2/institusjonsSok/sokInstitusjon.html"
     }
 
-    hentInstitusjon(instID: any): void {
-      
+    tilInstitusjon(id: number): void {
+        // gå til ny side
+         
+    }
+
+    hentInstitusjon(): void {
+        alert("mmm");
+        /*
       $.getJSON("http://localhost:9999/api.scibot/v1/institusjon/" + instID, function(data) {
             sessionStorage.setItem("institusjon", JSON.stringify(data));
         });
         setTimeout('RedirectInstitusjon()', 300);
-      ;
+        */
+      
     }
 }
