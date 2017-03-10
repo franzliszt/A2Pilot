@@ -1,0 +1,104 @@
+html,
+body {
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #F8F8F8;
+    color: black;
+}
+
+.text-vertical-center2 {
+    text-align: right;
+    vertical-align: top;
+    
+}
+
+#tilhorighet {
+    vertical-align: top;
+    margin-bottom: 0;
+}
+
+.text-vertical-center2 input {
+    width: 15em;
+    margin-top: 0.9em;
+    margin-right: 1em;
+    font-size: 1.2em;
+    background-color: #193663;
+    border: 1px solid #193663;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+::-webkit-input-placeholder {
+    color: white;
+     
+}
+.text-vertical-center2 button {
+    width: 5em;
+    font-size: 1em;
+    height: 2.1em;
+    margin-right: 1em;
+    color: #fff;
+    background-color: black;
+}
+
+.tilbakeKnapp {
+    margin-top: -1.7em;
+    margin-left: 1em;
+}
+
+.tilbakeKnapp button {
+    background-color: #193663;
+    border: 1px solid #193663;
+    color: white;
+    font-size: 1em;
+}
+
+.meritter {
+    font-size: 18px;
+    /*border: 1px solid black;*/
+}
+
+
+#sok input {
+    width: 25em; height:2.3em;
+    font-size: 19px;
+
+}
+
+#sok button {
+    width: 3em; height:2.3em;
+    font-size: 19px;
+    margin-bottom: 0.3em;
+}
+
+.topNiv {
+    background-color:#193663;
+    height: 3.5em;
+}
+
+.topNiv a {
+    color: #fff;
+}
+
+.submitHeader {
+    text-align: center;
+}
+
+.submitHeader h4 {
+    display: inline-block;
+}
+
+footer {
+    padding: 20px 0;
+}
+
+#to-top {
+  display: none;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+}
+
+

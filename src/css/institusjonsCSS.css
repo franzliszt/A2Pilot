@@ -1,0 +1,73 @@
+
+html,
+body {
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #F8F8F8;
+    color: black;
+}
+
+.text-vertical-center2 {
+    text-align: right;
+    vertical-align: top;
+    
+}
+
+.text-vertical-center2 select {
+    width: 15em;
+    margin-top: 0.9em;
+    margin-right: 1em;
+    font-size: 1.2em;
+    background-color: #193663;
+    border: 1px solid #193663;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+::-webkit-input-placeholder {
+    color: white;
+}
+
+#institusjon option {
+    background-color: white;
+    color: black;
+}
+
+.text-vertical-center2 button {
+    width: 5em;
+    font-size: 1em;
+    height: 2.1em;
+    margin-right: 1em;
+    color: #fff;
+    background-color: black;
+}
+
+.tilbakeKnapp {
+    margin-top: -1.7em;
+    margin-left: 1em;
+}
+
+.tilbakeKnapp button {
+    background-color: #193663;
+    border: 1px solid #193663;
+    color: white;
+    font-size: 1em;
+}
+
+.meritter {
+    font-size: 18px;
+}
+
+.topNiv {
+    background-color:#193663;
+    height: 3.5em;
+}
+
+#to-top {
+  display: none;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+}
