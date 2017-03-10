@@ -1,3 +1,5 @@
+
+
 .search-result{
   border-bottom: 1px solid gray;
   border-left: 1px solid gray;
@@ -9,10 +11,12 @@
   cursor: pointer;
   background-color: white;
 }
+
 .search-result:hover {
   color: #eee;
   background-color: #607D8B;
 }
+
 #search-box{
   width: 200px;
   height: 20px;

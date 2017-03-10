@@ -1,8 +1,8 @@
 <div id="search-component">
-  <input #searchBox id="search-box" (keyup)="sok(searchBox.value)" />
+  <input #searchBox id="search-box" (keyup)="sok(searchBox.value)" placeholder="F.eks Ola Nordmann..."/>
   <div>
     <div *ngFor="let person of personer | async"
-         (click)="gotoDetail(hero)" class="search-result" >
+         (click)="tilPersonDetaljer(person)" class="search-result" >
       {{person.navn}}
     </div>
   </div>

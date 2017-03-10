@@ -1,4 +1,5 @@
 export class Person {
+    id: number;
     navn: string;
     status: string;
     rank: number;

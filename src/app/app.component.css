@@ -1,11 +1,11 @@
-html,
-body {
-    background-color: #F2F0E6;
-    color: #FEFFFF;
-}
 
 body {
     font-family: 'Hind', sans-serif;
+}
+
+.main-container {
+    background-color: #193663;
+    height: 100vh;
 }
 
 .text-vertical-center input {
@@ -34,13 +34,18 @@ body {
 
 .text-vertical-center h1 {
     color: #fff;
-    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0;
     font-size: 6em;
     font-weight: 100;
     letter-spacing: 25px;
     text-transform:uppercase;
     text-decoration: underline;
+}
+
+.text-vertical-center h3 {
+    color: #fff;
 }
 
 .btn-dark {

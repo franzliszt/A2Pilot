@@ -1,23 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>SciBot</title>
 
-        <!-- Bootstrap Core CSS -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
-    </head>
-
-    <body>
-        <div class="top">
+    <body class="main-container">
+        
+        
         <div class="topNiva">
 
         <!-- Navigasjon -->
-        <!--
+        
         <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
         <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">
@@ -36,36 +26,11 @@
                 </li>
             </ul>
         </nav>
-    -->
     </div>
-    <header id="top" class="header">
-        <div class="text-vertical-center">
-            <div id="box">
-            <h1>{{title}}</h1>
-            <h3>{{undertittel}}</h3>
+    <router-outlet></router-outlet>
 
-            <br>
-            <div class="sok">
-               
-                    
-                            
-                 <!--   
-                <select #inst style="color: black; vertical-align: bottom; width:17.926em; font-size:20.1px; " id="institusjon">
-                    <option>Velg institusjon</option>
-                    <option *ngFor="let inst of institusjoner"
-                        (click)="tilInstitusjon(inst.id)" >{{inst.navn}}</option>
-                </select>
-                
--->
-<person-sok></person-sok>
-                </div>
-                    <button (click)="personDetaljer()" class="btn btn-primary" style="background-color:#193663; width:20%;">
-                        Hent person
-                    </button>
-                </div>
-            </div>
-        </header>
-    </div>
+
+
 
 
         <!-- jQuery -->

@@ -12,6 +12,8 @@ import { AppComponent }  from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpService } from "./http.service";
 import { PersonSokComponent } from "./person-sok.component";
+import { PersonComponent } from "./person.component";
+import { MainComponent } from "./main.component";
 
 @NgModule({
   imports: [
@@ -23,7 +25,9 @@ import { PersonSokComponent } from "./person-sok.component";
   ],
   declarations: [
     AppComponent,
-    PersonSokComponent
+    PersonSokComponent,
+    PersonComponent,
+    MainComponent
   ],
   providers: [
     HttpService

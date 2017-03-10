@@ -51,8 +51,9 @@ export class PersonSokComponent implements OnInit {
       });
   }
 
-  gotoDetail(person: Person): void {
-    //let link = ['/detail', person.id];
-    //this.router.navigate(link);
+  tilPersonDetaljer(person: Person): void {
+    // TODO: hente person fra api ved å sende id
+    let link = ['/personDetaljer', person.id];
+    this.router.navigate(link);
   }
 }

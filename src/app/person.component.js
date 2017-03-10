@@ -8,32 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-// Observable class extensions
-require('rxjs/add/observable/of');
-// Observable operators
-require('rxjs/add/operator/catch');
-require('rxjs/add/operator/debounceTime');
-require('rxjs/add/operator/distinctUntilChanged');
-require('rxjs/add/operator/switchMap');
-var AppComponent = (function () {
-    function AppComponent() {
+var core_1 = require("@angular/core");
+var PersonComponent = (function () {
+    function PersonComponent() {
     }
-    AppComponent = __decorate([
+    PersonComponent.prototype.ngOnInit = function () {
+    };
+    PersonComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: "my-app",
-            templateUrl: "app.component.html",
-            styleUrls: [
-                "app.component.css",
-                "font-awesome.min.css",
-                "person-sok.css",
-                "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
-            ]
+            selector: "person-detaljer",
+            templateUrl: "person.component.html",
+            styleUrls: ["person.component.css"]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], PersonComponent);
+    return PersonComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.PersonComponent = PersonComponent;
+//# sourceMappingURL=person.component.js.map

@@ -18,49 +18,67 @@ require('rxjs/add/observable/of');
 require('rxjs/add/operator/catch');
 require('rxjs/add/operator/debounceTime');
 require('rxjs/add/operator/distinctUntilChanged');
+require('rxjs/add/operator/switchMap');
+var INSTITUSJONER_1 = require("./INSTITUSJONER");
 var person_sok_service_1 = require("./person-sok.service");
-var PersonSokComponent = (function () {
-    function PersonSokComponent(personSokService, router) {
+var MainComponent = (function () {
+    function MainComponent(personSokService, router) {
         this.personSokService = personSokService;
         this.router = router;
-        // Subject produserer en observable event stream.
-        // variabelen lager en observable av strenger
-        this.searchTerms = new Subject_1.Subject();
+        this.title = 'SaiBått';
+        this.undertittel = "Søk etter person eller velg institusjon";
+        this.institusjoner = INSTITUSJONER_1.INSTITUSJONER;
+        this.sokeOrd = new Subject_1.Subject();
     }
-    // Push a search term into the observable stream.
-    PersonSokComponent.prototype.sok = function (term) {
-        this.searchTerms.next(term);
-    };
-    PersonSokComponent.prototype.ngOnInit = function () {
+    MainComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.personer = this.searchTerms
+        this.personer = this.sokeOrd
             .debounceTime(300) // wait 300ms after each keystroke before considering the term
             .distinctUntilChanged() // ignore if next search term is same as previous
             .switchMap(function (term) { return term // switch to new observable each time the term changes
             ? _this.personSokService.sok(term.trim())
             : Observable_1.Observable.of([]); })
             .catch(function (error) {
-            // TODO: add real error handling
+            // TODO: håndtere feilmeldinger
             console.log(error);
             return Observable_1.Observable.of([]);
         });
     };
-    PersonSokComponent.prototype.tilPersonDetaljer = function (person) {
-        // TODO: hente person fra api ved å sende id
-        var link = ['/personDetaljer', person.id];
-        this.router.navigate(link);
+    MainComponent.prototype.hent = function (term) {
+        this.sokeOrd.next(term);
     };
-    PersonSokComponent = __decorate([
+    MainComponent.prototype.personDetaljer = function (person) {
+    };
+    MainComponent.prototype.RedirectInstitusjon = function () {
+        //window.location="http://localhost:9999/prototype2/institusjonsSok/sokInstitusjon.html"
+    };
+    MainComponent.prototype.tilInstitusjon = function (id) {
+        // gå til ny side
+        // kall http get
+    };
+    MainComponent.prototype.hentInstitusjon = function () {
+        /*
+      $.getJSON("http://localhost:9999/api.scibot/v1/institusjon/" + instID, function(data) {
+            sessionStorage.setItem("institusjon", JSON.stringify(data));
+        });
+        setTimeout('RedirectInstitusjon()', 300);
+        */
+    };
+    MainComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'person-sok',
-            templateUrl: './person-sok.component.html',
-            styleUrls: ['./person-sok.component.css'],
+            selector: "main-component",
+            templateUrl: "main.component.html",
+            styleUrls: [
+                "main.component.css",
+                "bootstrap.min.css",
+                "person-sok.css"
+            ],
             providers: [person_sok_service_1.PersonSokService]
         }), 
         __metadata('design:paramtypes', [person_sok_service_1.PersonSokService, router_1.Router])
-    ], PersonSokComponent);
-    return PersonSokComponent;
+    ], MainComponent);
+    return MainComponent;
 }());
-exports.PersonSokComponent = PersonSokComponent;
-//# sourceMappingURL=person-sok.component.js.map
+exports.MainComponent = MainComponent;
+//# sourceMappingURL=main.component.js.map

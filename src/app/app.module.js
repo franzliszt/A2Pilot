@@ -19,6 +19,8 @@ var app_component_1 = require('./app.component');
 var app_routing_module_1 = require('./app-routing.module');
 var http_service_1 = require("./http.service");
 var person_sok_component_1 = require("./person-sok.component");
+var person_component_1 = require("./person.component");
+var main_component_1 = require("./main.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -33,7 +35,9 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                person_sok_component_1.PersonSokComponent
+                person_sok_component_1.PersonSokComponent,
+                person_component_1.PersonComponent,
+                main_component_1.MainComponent
             ],
             providers: [
                 http_service_1.HttpService
