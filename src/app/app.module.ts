@@ -15,6 +15,7 @@ import { PersonSokComponent } from "./person-sok.component";
 import { PersonComponent } from "./person.component";
 import { MainComponent } from "./main.component";
 import { ReversePipe } from "./ReversePipe";
+import { InstitusjonDetaljerComponent } from "./institusjon-detaljer.component";
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { ReversePipe } from "./ReversePipe";
     PersonSokComponent,
     PersonComponent,
     MainComponent,
-    ReversePipe
+    ReversePipe,
+    InstitusjonDetaljerComponent
   ],
   providers: [
     HttpService

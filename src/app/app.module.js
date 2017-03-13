@@ -22,6 +22,7 @@ var person_sok_component_1 = require("./person-sok.component");
 var person_component_1 = require("./person.component");
 var main_component_1 = require("./main.component");
 var ReversePipe_1 = require("./ReversePipe");
+var institusjon_detaljer_component_1 = require("./institusjon-detaljer.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -39,7 +40,8 @@ var AppModule = (function () {
                 person_sok_component_1.PersonSokComponent,
                 person_component_1.PersonComponent,
                 main_component_1.MainComponent,
-                ReversePipe_1.ReversePipe
+                ReversePipe_1.ReversePipe,
+                institusjon_detaljer_component_1.InstitusjonDetaljerComponent
             ],
             providers: [
                 http_service_1.HttpService

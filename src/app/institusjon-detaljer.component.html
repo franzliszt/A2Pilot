@@ -1,0 +1,12 @@
+<div class="topNiv">
+        <div class="text-vertical-center2">
+            <select #inst class="institusjon">
+                    <option>Velg institusjon</option>
+                    <option *ngFor="let inst of institusjoner"
+                        (click)="visInstitusjon(inst.id)" >{{inst.navn}}</option>
+                </select>
+        </div>
+        <div class="tilbakeKnapp">
+        <button onclick="tilbakeForside()"><span class="glyphicon glyphicon-chevron-left"></span>Tilbake til forside</button>
+    </div>
+</div>

@@ -10,6 +10,6 @@ export class Person {
     produksjon: Array<any>;
     assosiasjoner: Array<any>;
     tidligereAssosiasjoner: Array<any>;
-    konkurrenter: Array<any>;
+    konkurrenter: Array<Person>;
     aarlig: Array<any>; // objekter
 }

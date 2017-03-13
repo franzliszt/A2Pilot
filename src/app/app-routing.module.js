@@ -12,10 +12,12 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var person_component_1 = require("./person.component");
 var main_component_1 = require("./main.component");
+var institusjon_detaljer_component_1 = require("./institusjon-detaljer.component");
 var routes = [
     { path: '', redirectTo: '/hjem', pathMatch: 'full' },
     { path: 'hjem', component: main_component_1.MainComponent },
-    { path: 'personDetaljer', component: person_component_1.PersonComponent }
+    { path: 'personDetaljer', component: person_component_1.PersonComponent },
+    { path: "institusjonDetaljer/:id", component: institusjon_detaljer_component_1.InstitusjonDetaljerComponent }
 ];
 // RouterModule ligger i exports slik at komponenter har tilgant
 // RouterLink og RouterOutlet

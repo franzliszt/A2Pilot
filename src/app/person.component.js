@@ -23,7 +23,6 @@ var PersonComponent = (function () {
     }
     PersonComponent.prototype.ngOnInit = function () {
         this.person = JSON.parse(sessionStorage.getItem("person"));
-        //alert(this.person.aarlig[0]);
         /*this.route.params
             .switchMap((params: Params) => this.httpService.getPerson(+params["id"]))
             .subscribe(person => this.person = person);*/

@@ -16,6 +16,13 @@ body {
     font-size: 1.5em;
 }
 
+.institusjon {
+    color: black; 
+    vertical-align: bottom; 
+    width:17.926em; 
+    font-size:20.1px;
+}
+
 .text-vertical-center a {
     background-color: #fff;
     color: #3581B8;

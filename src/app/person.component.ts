@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from "@angular/core";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import { Location }                 from '@angular/common';
+
 import 'rxjs/add/operator/switchMap';
 
 import { ReversePipe } from "./ReversePipe";
@@ -43,7 +44,6 @@ export class PersonComponent implements OnInit {
 
     ngOnInit(): void {
         this.person = JSON.parse(sessionStorage.getItem("person"));
-        //alert(this.person.aarlig[0]);
         /*this.route.params
             .switchMap((params: Params) => this.httpService.getPerson(+params["id"]))
             .subscribe(person => this.person = person);*/

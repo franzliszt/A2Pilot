@@ -19,19 +19,19 @@ require('rxjs/add/operator/catch');
 require('rxjs/add/operator/debounceTime');
 require('rxjs/add/operator/distinctUntilChanged');
 require('rxjs/add/operator/switchMap');
-var INSTITUSJONER_1 = require("./INSTITUSJONER");
 var person_sok_service_1 = require("./person-sok.service");
+var INSTITUSJONER_1 = require("./INSTITUSJONER");
 var MainComponent = (function () {
     function MainComponent(personSokService, router) {
         this.personSokService = personSokService;
         this.router = router;
         this.title = 'SaiBått';
         this.undertittel = "Søk etter person eller velg institusjon";
-        this.institusjoner = INSTITUSJONER_1.INSTITUSJONER;
         this.sokeOrd = new Subject_1.Subject();
     }
     MainComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.institusjoner = INSTITUSJONER_1.INSTITUSJONER;
         this.personer = this.sokeOrd
             .debounceTime(300) // wait 300ms after each keystroke before considering the term
             .distinctUntilChanged() // ignore if next search term is same as previous
@@ -49,14 +49,11 @@ var MainComponent = (function () {
     };
     MainComponent.prototype.personDetaljer = function (person) {
     };
-    MainComponent.prototype.RedirectInstitusjon = function () {
-        //window.location="http://localhost:9999/prototype2/institusjonsSok/sokInstitusjon.html"
-    };
-    MainComponent.prototype.tilInstitusjon = function (id) {
-        // gå til ny side
-        // kall http get
-    };
-    MainComponent.prototype.hentInstitusjon = function () {
+    MainComponent.prototype.visInstitusjon = function (id) {
+        // TODO: hente data om institusjon
+        var link = ["/institusjonDetaljer", id];
+        this.router.navigate(link);
+        // TODO: hente info om valgt institusjon
         /*
       $.getJSON("http://localhost:9999/api.scibot/v1/institusjon/" + instID, function(data) {
             sessionStorage.setItem("institusjon", JSON.stringify(data));

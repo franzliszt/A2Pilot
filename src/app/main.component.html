@@ -9,21 +9,17 @@
             <div class="sok">
                 <!-- TODO: fikse søkeresultater -->
                 <person-sok></person-sok>
-                
-                <select #inst style="color: black; vertical-align: bottom; width:17.926em; font-size:20.1px;" id="institusjon">
+                <select #inst class="institusjon">
                     <option>Velg institusjon</option>
                     <option *ngFor="let inst of institusjoner"
-                        (click)="tilInstitusjon(inst.id)" >{{inst.navn}}</option>
+                        (click)="visInstitusjon(inst.id)" >{{inst.navn}}</option>
                 </select>
-                
-
-            
-                </div>
-
-
-                    <button (click)="personDetaljer()" class="btn btn-primary" style="background-color:#193663; width:20%;">
-                        Hent person
-                    </button>
-                </div>
             </div>
-        </header>
+
+
+            <button (click)="personDetaljer()" class="btn btn-primary" style="background-color:#193663; width:20%;">
+                Hent person
+            </button>
+            </div>
+        </div>
+    </header>
