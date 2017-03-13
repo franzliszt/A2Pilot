@@ -3,13 +3,72 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     let personer = [
-      {id: 11, navn: 'Frode Eika Sandnes'},
-      {id: 12, navn: 'Håkon Råen'},
-      {id: 13, navn: 'Siri Jensen'},
-      {id: 14, navn: 'Jon Martin Skranes'},
-      {id: 15, navn: 'Geir Jensen'},
-      {id: 16, navn: 'Anne Thoren'},
-      {id: 17, navn: 'Ane Gaus'}
+      {
+        id: 11, navn: 'Frode Eika Sandnes', 
+        status: "Platinum", 
+        rank: 1, 
+        rankNytt: 2, 
+        akronymer: "HIOA", 
+        poeng: 123, 
+        poengNytt: 122, 
+        produksjon: 12, 
+        assosiasjoner: ["HIOA", "UIO"], 
+        tidligereAssosiasjoner: ["NTNU, UIT"], 
+        konkurrenter: ["a", "b"], 
+        aarlig: ["årlig1", "årlig2"]
+      },
+      {
+        id: 12, navn: 'Lars Larsen', 
+        status: "Gull", 
+        rank: 1, 
+        rankNytt: 2, 
+        akronymer: "NTNU", 
+        poeng: 123, 
+        poengNytt: 122, 
+        produksjon: 12, 
+        assosiasjoner: ["HIOA", "UIO"], 
+        tidligereAssosiasjoner: ["NTNU, UIT"], 
+        konkurrenter: ["a", "b"], 
+        aarlig: ["årlig1", "årlig2"]
+      },
+      {
+        id: 13, navn: 'Per Fekt', 
+        status: "Sølv", 
+        rank: 1, 
+        rankNytt: 2, 
+        akronymer: "UIO", 
+        poeng: 123, 
+        poengNytt: 122, 
+        produksjon: 12, 
+        assosiasjoner: ["HIOA", "UIO"], 
+        tidligereAssosiasjoner: ["NTNU, UIT"], 
+        konkurrenter: ["a", "b"], 
+        aarlig: ["årlig1", "årlig2"]
+      },{
+        id: 14, navn: 'Anne Larsen',
+        status: "Påheng",
+        akronymer: "UIT", 
+        poeng: 123, 
+        poengNytt: 122, 
+        produksjon: 12, 
+        assosiasjoner: ["NTNU", "UIO"], 
+        tidligereAssosiasjoner: ["NTNU, UIT"], 
+        konkurrenter: ["a", "b"], 
+        aarlig: ["årlig1", "årlig2"]
+      },{
+        id: 15, navn: 'Siri Jensen', 
+        status: "Grus", 
+        rank: 1, 
+        rankNytt: 2, 
+        akronymer: "HIOA", 
+        poeng: 123, 
+        poengNytt: 122, 
+        produksjon: 12, 
+        assosiasjoner: ["HIOA", "UIO"], 
+        tidligereAssosiasjoner: ["NTNU, UIT"], 
+        konkurrenter: ["a", "b"], 
+        aarlig: ["årlig1", "årlig2"]
+      }
     ];
     return { personer };
   }

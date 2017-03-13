@@ -11,9 +11,6 @@ import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/switchMap';
 
 
-
-
-
 @Component({
     moduleId: module.id,
     selector: "my-app",

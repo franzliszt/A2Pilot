@@ -33,6 +33,7 @@ var PersonSokComponent = (function () {
     };
     PersonSokComponent.prototype.ngOnInit = function () {
         var _this = this;
+        sessionStorage.setItem("person", null);
         this.personer = this.searchTerms
             .debounceTime(300) // wait 300ms after each keystroke before considering the term
             .distinctUntilChanged() // ignore if next search term is same as previous
@@ -46,16 +47,17 @@ var PersonSokComponent = (function () {
         });
     };
     PersonSokComponent.prototype.tilPersonDetaljer = function (person) {
-        // TODO: hente person fra api ved å sende id
-        var link = ['/personDetaljer', person.id];
+        sessionStorage.setItem("person", JSON.stringify(person));
+        //let link = ['/personDetaljer', person.id];
+        var link = ["/personDetaljer"];
         this.router.navigate(link);
     };
     PersonSokComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'person-sok',
-            templateUrl: './person-sok.component.html',
-            styleUrls: ['./person-sok.component.css'],
+            templateUrl: 'person-sok.component.html',
+            styleUrls: ['person-sok.component.css'],
             providers: [person_sok_service_1.PersonSokService]
         }), 
         __metadata('design:paramtypes', [person_sok_service_1.PersonSokService, router_1.Router])

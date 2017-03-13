@@ -7,21 +7,23 @@ import { Institusjon } from "./Institusjon";
 
 @Injectable()
 export class HttpService {
-    private personUrl = "http://localhost:9999/api.scibot/v1/person/";
-    private institusjonUrl = "http://localhost:9999/api.scibot/vi/institusjon/";
+    private personUrl = "http://localhost:9999/api.scibot/v1/person";
+    private institusjonUrl = "http://localhost:9999/api.scibot/vi/institusjon";
 
+    private testUrl = "/api/personer";
     private headers = new Headers({"Content-type": "application/json"});
 
     constructor(private http: Http) {}
 
     private handleError(error: any): Promise<any> {
+        alert("Error");
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     }
 
     getPerson(id: number): Promise<Person> {
-        const url = `${this.personUrl}${id}`;
-
+        //const url = `${this.personUrl}/${id}`;
+        const url = `${this.testUrl}/${id}`;
         return this.http.get(url)
             .toPromise()
             .then(response => response.json().data as Person)

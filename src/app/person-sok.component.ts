@@ -15,8 +15,8 @@ import { Person } from "./Person";
 @Component({
   moduleId: module.id,
   selector: 'person-sok',
-  templateUrl: './person-sok.component.html',
-  styleUrls: [ './person-sok.component.css' ],
+  templateUrl: 'person-sok.component.html',
+  styleUrls: [ 'person-sok.component.css' ],
   providers: [PersonSokService]
 })
 export class PersonSokComponent implements OnInit {
@@ -36,6 +36,7 @@ export class PersonSokComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    sessionStorage.setItem("person", null);
     this.personer = this.searchTerms
       .debounceTime(300)        // wait 300ms after each keystroke before considering the term
       .distinctUntilChanged()   // ignore if next search term is same as previous
@@ -52,8 +53,9 @@ export class PersonSokComponent implements OnInit {
   }
 
   tilPersonDetaljer(person: Person): void {
-    // TODO: hente person fra api ved å sende id
-    let link = ['/personDetaljer', person.id];
+    sessionStorage.setItem("person", JSON.stringify(person));
+    //let link = ['/personDetaljer', person.id];
+    let link = ["/personDetaljer"];
     this.router.navigate(link);
   }
 }

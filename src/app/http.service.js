@@ -14,16 +14,19 @@ require('rxjs/add/operator/toPromise');
 var HttpService = (function () {
     function HttpService(http) {
         this.http = http;
-        this.personUrl = "http://localhost:9999/api.scibot/v1/person/";
-        this.institusjonUrl = "http://localhost:9999/api.scibot/vi/institusjon/";
+        this.personUrl = "http://localhost:9999/api.scibot/v1/person";
+        this.institusjonUrl = "http://localhost:9999/api.scibot/vi/institusjon";
+        this.testUrl = "/api/personer";
         this.headers = new http_1.Headers({ "Content-type": "application/json" });
     }
     HttpService.prototype.handleError = function (error) {
+        alert("Error");
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     };
     HttpService.prototype.getPerson = function (id) {
-        var url = "" + this.personUrl + id;
+        //const url = `${this.personUrl}/${id}`;
+        var url = this.testUrl + "/" + id;
         return this.http.get(url)
             .toPromise()
             .then(function (response) { return response.json().data; })

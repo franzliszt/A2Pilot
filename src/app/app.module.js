@@ -21,6 +21,7 @@ var http_service_1 = require("./http.service");
 var person_sok_component_1 = require("./person-sok.component");
 var person_component_1 = require("./person.component");
 var main_component_1 = require("./main.component");
+var ReversePipe_1 = require("./ReversePipe");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -37,7 +38,8 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 person_sok_component_1.PersonSokComponent,
                 person_component_1.PersonComponent,
-                main_component_1.MainComponent
+                main_component_1.MainComponent,
+                ReversePipe_1.ReversePipe
             ],
             providers: [
                 http_service_1.HttpService

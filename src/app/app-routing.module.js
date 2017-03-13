@@ -15,7 +15,7 @@ var main_component_1 = require("./main.component");
 var routes = [
     { path: '', redirectTo: '/hjem', pathMatch: 'full' },
     { path: 'hjem', component: main_component_1.MainComponent },
-    { path: 'personDetaljer/:id', component: person_component_1.PersonComponent }
+    { path: 'personDetaljer', component: person_component_1.PersonComponent }
 ];
 // RouterModule ligger i exports slik at komponenter har tilgant
 // RouterLink og RouterOutlet

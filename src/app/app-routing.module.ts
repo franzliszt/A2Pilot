@@ -8,7 +8,7 @@ import { MainComponent } from "./main.component";
 const routes: Routes = [
   { path: '', redirectTo: '/hjem', pathMatch: 'full' },
   { path: 'hjem',  component: MainComponent },
-  { path: 'personDetaljer/:id', component: PersonComponent }
+  { path: 'personDetaljer', component: PersonComponent }
 ];
 // RouterModule ligger i exports slik at komponenter har tilgant
 // RouterLink og RouterOutlet

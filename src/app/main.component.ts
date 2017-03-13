@@ -15,6 +15,7 @@ import { Person } from "./person";
 import { PersonSokService } from "./person-sok.service";
 
 
+
 @Component({
     moduleId: module.id,
     selector: "main-component",

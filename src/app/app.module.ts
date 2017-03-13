@@ -14,6 +14,7 @@ import { HttpService } from "./http.service";
 import { PersonSokComponent } from "./person-sok.component";
 import { PersonComponent } from "./person.component";
 import { MainComponent } from "./main.component";
+import { ReversePipe } from "./ReversePipe";
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { MainComponent } from "./main.component";
     AppComponent,
     PersonSokComponent,
     PersonComponent,
-    MainComponent
+    MainComponent,
+    ReversePipe
   ],
   providers: [
     HttpService

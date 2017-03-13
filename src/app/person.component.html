@@ -1,1 +1,99 @@
-<h1>Person detaljer</h1>
+
+<div class="topNiv">
+        <div class="text-vertical-center2">
+            <input type="search" id="inputSok" placeholder="Skriv inn søkeord..." />
+           <!--<button onclick="nesteSide()">Søk</button>--> 
+        </div>
+        <div class="tilbakeKnapp">
+            <button (click)="tilbakeForside()">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                Tilbake til forside
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="col-md-6"><h2 id="personTag">{{personTag}}</h2></div>
+    </div>
+
+    <div class="container">
+        <div class="col-md-6" style="margin-bottom:0; padding-bottom:0;">
+            <select style="background-color:#F8F8F8;">
+                <option (click)="tilPoeng()" value="0">Poeng</option>
+                <option (click)="tilKroner()" value="1">Kroner</option>
+            </select>
+            <table class="table table-bordered">
+            <thead>
+                <tr>
+                <th>Rank</th>
+                <th>Navn</th>
+                <th>Institusjon</th>
+                </tr>
+
+            </thead>
+            <tbody id="tabellBody">
+                <tr><td>15</td></tr>
+                <tr><td>15</td></tr>
+                <tr><td>15</td></tr>
+                <tr><td>15</td></tr>
+                <tr><td>15</td></tr>
+            </tbody>
+        </table>
+        
+      </div>
+        <div class="col-md-6" style="margin-bottom:0; padding-bottom:0;">
+            <select id="aar" style="background-color:#F8F8F8;">
+                <option *ngFor="let ar of arstall | reverse" value="ar"
+                    (click)="skiftAar(ar)">{{ar}}</option>
+            </select>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Navn</th>
+                    <th>Institusjon</th>
+                  </tr>
+
+                </thead>
+                <tbody id = "tabellBody">
+                </tbody>
+              </table>
+      </div>
+        
+</div>
+<div class="container" style="border-top: 1px solid black; border-bottom:1px solid black;">
+   <div id="tilhorighet" class="col-md-6">
+    <div class="meritter">
+      <h2>Tilhørighet:</h2>
+       <ul id="assosiasjoner">
+        <li id="placeHolderTilhorighet">Ingen aktive stillinger</li>
+      </ul>
+  </div>
+</div>
+<div class="col-md-6">
+  <div class= "meritter">
+      <h2>Meritter:</h2>
+        <ul style="list-style-type:disc;">
+            <li><p id="poeng">NVI-poeng: {{person.poeng}}</p></li>
+            <li><p id="poengNytt">NVI-poeng: {{person.poengNytt}} </p></li>
+            <li><p id="kroner">Verdi i kroner:</p></li>
+            <li><p id="rankNytt">Ny Norgesrank: {{person.rankNytt}}</p></li>
+            <li><p id="rank">Gammel Norgesrank: {{person.rank}}</p></li>
+            <li><p>Status:</p></li>
+            <li style="list-style-type:none !important;"><h3 id="status" style="font-size:60px; font-weight: 500; color:#007ee5;">{{person.status | uppercase}}</h3></li>
+        </ul>
+    </div>
+  </div>
+ </div>
+<div class="container">
+<div class="col-md-12">
+    <div>
+        <canvas #myCanvas ></canvas>
+      </div>
+ </div>
+</div>
+    <div class="container">
+        <div style="margin-top:6em; font-size:15px;" class="col-md-12">
+        <footer><p style="text-align: center">SCIBOT PROTOTYPE</p></footer>
+        </div>
+    </div>
